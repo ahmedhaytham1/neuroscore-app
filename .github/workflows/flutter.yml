@@ -29,11 +29,8 @@ jobs:
       - name: Enable web
         run: flutter config --enable-web
 
-      - name: Create web files
-        run: flutter create .
-
       - name: Build web
-        run: flutter build web --release --base-href /neuroscore-app/
+        run: flutter build web --release
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
