@@ -21,7 +21,7 @@ jobs:
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.24.0'
+          channel: stable
 
       - name: Install dependencies
         run: flutter pub get
@@ -30,7 +30,7 @@ jobs:
         run: flutter config --enable-web
 
       - name: Build web
-        run: flutter build web --release
+        run: flutter build web --release --base-href /neuroscore-app/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
